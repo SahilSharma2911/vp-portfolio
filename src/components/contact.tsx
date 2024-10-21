@@ -1,17 +1,17 @@
 "use client";
 
-import {SubmitHandler, set, useForm} from "react-hook-form";
-import {bounceAnimation, staggeredAnimation} from "~/utils/animations";
-import {motion, useInView} from "framer-motion";
-import {useRef, useState} from "react";
+import { SubmitHandler, set, useForm } from "react-hook-form";
+import { bounceAnimation, staggeredAnimation } from "~/utils/animations";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
 
 import Button from "./button";
 import Container from "~/components/container";
-import {DownloadIcon} from "@radix-ui/react-icons";
-import {cn} from "~/utils/cn";
-import {useSize} from "~/contexts/sizeContext";
+import { DownloadIcon } from "@radix-ui/react-icons";
+import { cn } from "~/utils/cn";
+import { useSize } from "~/contexts/sizeContext";
 import z from "zod";
-import {zodResolver} from "@hookform/resolvers/zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters long"),
@@ -27,7 +27,7 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
-    formState: {errors},
+    formState: { errors },
   } = useForm<ContactFormSchema>({
     resolver: zodResolver(contactFormSchema),
   });
@@ -49,7 +49,7 @@ export default function Contact() {
     setIsSubmitted(true);
   };
 
-  const {setSize} = useSize();
+  const { setSize } = useSize();
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -193,7 +193,7 @@ export default function Contact() {
                   color: "#F7F7F7",
                   scale: 1.05,
                 }}
-                transition={{duration: 0.2, ease: "easeOut"}}
+                transition={{ duration: 0.2, ease: "easeOut" }}
               >
                 Send Message
               </motion.button>

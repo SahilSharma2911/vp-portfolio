@@ -13,6 +13,36 @@ export const bounceAnimation = {
     },
   },
 };
+export const bounceAnimationImage = {
+  initial: {
+    x: 50,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 260,
+      damping: 20,
+    },
+  },
+};
+export const bounceAnimationText = {
+  initial: {
+    x: -50,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 260,
+      damping: 20,
+    },
+  },
+};
 
 export const linkAnimation = {
   initial: {
